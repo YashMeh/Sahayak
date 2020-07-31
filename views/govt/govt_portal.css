@@ -1,0 +1,24 @@
+body{
+	font-family: 'Lato', sans-serif;
+}
+
+.menu {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
+
+.first {
+	margin-top: 20px;
+	width: 100%;
+}
+
+.btn.btn-success{
+	margin-right: 2px;
+    margin-left: 2px;
+}
+
+.selection {
+	margin-top: 15px;
+	text-align: center;
+}

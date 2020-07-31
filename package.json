@@ -1,0 +1,24 @@
+{
+  "name": "tbhack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "heroku",
+    "tuberculosis"
+  ],
+  "author": "YashMeh",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.6",
+    "request": "^2.88.0"
+  },
+  "engines": {
+    "node": "8.11.4"
+  }
+}

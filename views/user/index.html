@@ -1,0 +1,231 @@
+<html>
+<head>
+    <title>Sahayak IP Portal</title>
+    <link rel="stylesheet" href="userstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cardo|EB+Garamond|Josefin+Slab" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+    <link rel = "stylesheet"
+          href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type = "text/javascript"
+            src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+    </script>
+
+</head>
+<body>
+
+
+<div class="container s12 m5 l4">
+    <div class="cont1" style="display:block">
+        <div class="row">
+            <div class="preview-container">
+                <video id="preview"></video>
+                <h1 id="unscanned" class="animated flipInX" data-aos="flip-left">Please scan Aadhar Card.</h1>
+                <h1 id="scanned">Aadhar Card scanned!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 center">
+                <input placeholder="" id="aadhar" type="text" class="animated flipInX">
+                <label for="Aadhar" style="font-size: 1.5em">Aadhar Number</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 center">
+                <input placeholder="" id="name" type="text" class="animated flipInX">
+                <label for="Name" style="font-size: 1.5em">Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 center">
+                <input placeholder="" id="dob" type="text" class="animated flipInX">
+                <label for="dob" style="font-size: 1.5em">Date Of Birth</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 center">
+                <input placeholder="" id="gender" type="text" class="animated flipInX">
+                <label for="gender" style="font-size: 1.5em">Gender</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 center">
+                <input placeholder="" id="address" type="text" class="animated flipInX">
+                <label for="address" style="font-size: 1.5em">Address</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 center">
+                <input placeholder="" id="city" type="text" class="animated flipInX">
+                <label for="city" style="font-size: 1.5em">City</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 center">
+                <input placeholder="" id="state" type="text" class="animated flipInX">
+                <label for="state" style="font-size: 1.5em">state</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 center">
+                <input placeholder="" id="pincode" type="text" class="animated flipInX">
+                <label for="pincode" style="font-size: 1.5em">Pincode</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 center">
+                <a class="waves-effect waves-light btn-large next">Next</a>
+            </div>
+        </div>
+    </div>
+    <div class="cont2" style="display:none">
+        <form>
+            <div class="row">
+                <div class="preview-container">
+                    <h1 id="title">Symptoms</h1>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="Cough"/>
+                                    <span style="font-size:2em">Cough lasting for 3 weeks or longer </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="ChestPain"/>
+                                    <span style="font-size:2em">Chest Pain </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="CoughingBlood"/>
+                                    <span style="font-size:2em">Coughing up blood or sputum </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="Fatigue"/>
+                                    <span style="font-size:2em">Fatigue </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="WeightLoss"/>
+                                    <span style="font-size:2em">Weight Loss </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="NoAppetite"/>
+                                    <span style="font-size:2em">No Appetite </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="Chills"/>
+                                    <span style="font-size:2em">Chills</span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="Fever"/>
+                                    <span style="font-size:2em">Fever</span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="NightSweating"/>
+                                    <span style="font-size:2em">Sweating at Night</span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="input-field col s12 center">
+                                <!-- <a class="waves-effect waves-light btn-large center" id="submit" type="submit">Report</a> -->
+                                <input type="button" value="Report" id="submit">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+    <div id="loading">
+        <h1>Submitting your data!</h1>
+        <img src="https://raw.githubusercontent.com/YashMeh/tbHack/master/views/media/loading.gif" width="40%">
+    </div>
+    <div id="success">
+        <h1>Thank you for reporting!</h1>
+    </div>
+    <link rel="stylesheet" href="userstyle.css">
+    
+    <script src="qrscan.js" type="text/javascript"></script>
+</body>
+</html>

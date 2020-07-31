@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sahayak - Govt Page</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="govt_portal.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-collapse-navbar-demo" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">Sahayak</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-collapse-navbar-demo">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Signup</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class = "menu">
+		<button type="button" class="btn btn-success">STATE WISE</button>
+		<button type="button" class="btn btn-success">AGE WISE</button>
+		<button type="button" class="btn btn-success">GENDER WISE</button>
+		<a href = "medwise.html" target="_blank"><button type="button" class="btn btn-success">CURE VS MED</button></a>
+	</div>
+
+	<div class = "selection">
+		<label for="area">Select Area:</label>
+		<select id="area" class="area">
+			<option value="India" selected>All India</option>
+			<option value="Tamil Nadu">Tamil Nadu</option>
+			<option value="Chandigarh">Chandigarh</option>
+			<option value="Assam">Assam</option>
+			<option value="Meghalaya">Meghalaya</option>
+			<option value="Kerala">Kerala</option>
+			<option value="Manipur">Manipur</option>
+			<option value="Uttar Pradesh">Uttar Pradesh</option>
+			<option value="Daman and Diu">Daman and Diu</option>
+			<option value="Nagaland">Nagaland</option>
+			<option value="Haryana">Haryana</option>
+			<option value="Orissa">Orrisa</option>
+			<option value="Himachal Pradesh">Himachal Pradesh</option>
+			<option value="Jharkhand">Jharkhand</option>
+			<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+			<option value="Punjab">Punjab</option>
+			<option value="Pondicherry">Pondicherry</option>
+			<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+		</select>
+	</div>
+
+	<div class="container first">
+		<canvas id="stateWiseGraph"></canvas>
+		<canvas id="genderWiseGraph"></canvas>
+		<canvas id="ageWiseGraph"></canvas>
+	</div>
+
+	<script type="text/javascript" src="govt_portal.js"></script>
+</body>
+</html>

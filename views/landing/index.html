@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sahayak</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script type = "text/javascript"
+            src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cardo|EB+Garamond|Josefin+Slab" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+</head>
+
+<body>
+<style type="text/css">
+    body {
+        background-color: #000;
+        font-family: 'Helvetica Neue', 'Calibri', Arial, sans-serif;
+    }
+    #landing-header {
+        z-index: 1;
+        position: relative;
+        text-align: center;
+        padding-top: 40vh;
+    }
+    #landing-header h1 {
+        font-size: 5em;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 200;
+        color:black;
+
+    }
+    .slideshow {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .button{
+        border-radius: 10px;
+    }
+
+    .slideshow li {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        opacity: 0;
+        z-index: 0;
+        animation: imageAnimation 20s linear infinite;
+    }
+    .slideshow li:nth-child(1) {
+        background-image: url(/views/media/one.jpg)
+    }
+    .slideshow li:nth-child(2) {
+        background-image: url(/views/media/two.jpg);
+        animation-delay: 4s;
+    }
+    .slideshow li:nth-child(3) {
+        background-image: url(/views/media/three.jpg);
+        animation-delay: 8s;
+    }
+    .slideshow li:nth-child(4) {
+        background-image: url(/views/media/four.jpg);
+        animation-delay: 12s;
+    }
+    .slideshow li:nth-child(5) {
+        background-image: url(/views/media/five.jpg);
+        animation-delay: 16s;
+    }
+    @keyframes imageAnimation {
+        0% {
+            opacity: 0;
+            animation-timing-function: ease-in;
+        }
+        10% {
+            opacity: 1;
+            animation-timing-function: ease-out;
+        }
+        20% {
+            opacity: 1
+        }
+        30% {
+            opacity: 0
+        }
+    }
+
+    /* Older browser support - .no-cssanimations class added by modernizr */
+    .no-cssanimations .slideshow li {
+        opacity: 1;
+    }
+
+</style>
+
+<div class="container-fluid" id="container">
+    <div id="landing-header">
+        <div class="container-fluid head" style="background: white;opacity: 0.6;z-index:-1;">
+            <img src="/views/media/logo.png" style="padding-top: 3%;z-index:2;">
+            <h1 style="z-index:2;opacity:1;">Welcome to Sahayak</h1>
+        </div>
+        <hr>
+        <a href="http://tbhack2.herokuapp.com/logs" class="btn btn-lg btn-success button" style="display: inline-block">Check Log</a>
+        <a href="https://tbhack2.herokuapp.com/ipPortal" class="btn btn-lg btn-success button" style="display: inline-block">New Patient</a>
+        <a href="https://tbhack2.herokuapp.com/updatePatient" class="btn btn-lg btn-success button" style="display: inline-block">Update Patient</a>
+    </div>
+</div>
+
+
+<ul class="slideshow">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

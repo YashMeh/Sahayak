@@ -1,0 +1,264 @@
+<html>
+<head>
+    <title>Patient Update Portal</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="updatestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cardo|EB+Garamond|Josefin+Slab" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+    <link rel = "stylesheet"
+          href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <script src="analyse.js" type="text/javascript"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            $('select').formSelect();
+        });
+    </script>
+
+
+</head>
+<body>
+<div class="container cont1" style="display: block">
+    <div class="preview-container">
+        <video id="preview"></video>
+        <h1 id="unscanned" style="font-size:1.5em;"><b>Please scan Aadhar Card to get patient details.</b></h1>
+        <h1 id="scanned" style="font-size: 1.5em"><b>Aadhar Card scanned!</b></h1>
+    </div>
+    <h2 id="content"></h2>
+    <table id="details">
+        <tr>
+            <td>Aadhar Number:</td>
+            <td id="aadhar">
+            </td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td id="name"></td>
+        </tr>
+        <tr>
+            <td>Date Of Birth:</td>
+            <td id="dob"></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td id="gender"></td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td id="address"></td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td id="city"></td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td id="state"></td>
+        </tr>
+        <tr>
+            <td>Pincode:</td>
+            <td id="pincode"></td>
+        </tr>
+    </table>
+    <div id="loadingRec">
+        <h1 style="font-size: 1.5em"><b>Please wait while we fetch patient history.</b></h1>
+        <img src="https://raw.githubusercontent.com/YashMeh/tbHack/master/views/media/loading.gif" width="40%">
+    </div>
+    <div id="history">
+        <h1 style="font-size: 1.5em"><b>Patient History:</b></h1>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s12 center">
+            <a class="waves-effect waves-light btn-large next">Next</a>
+        </div>
+    </div>
+
+</div>
+<div class="formDiv container" style="display:none">
+    <form>
+        <div class="row">
+            <div class="preview-container">
+                <h1 id="title">Symptoms</h1>
+            </div>
+        </div>
+        <div id="symptomDiv">
+            <table>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="Cough"/>
+                                    <span style="font-size:2em">Cough lasting for 3 weeks or longer </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="ChestPain"/>
+                                    <span style="font-size:2em">Chest Pain </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="CoughingBlood"/>
+                                    <span style="font-size:2em">Coughing up blood or sputum </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="Fatigue"/>
+                                    <span style="font-size:2em">Fatigue </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="WeightLoss"/>
+                                    <span style="font-size:2em">Weight Loss </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="NoAppetite"/>
+                                    <span style="font-size:2em">No Appetite </span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="Chills"/>
+                                    <span style="font-size:2em">Chills</span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="Fever"/>
+                                    <span style="font-size:2em">Fever</span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col s12 m5 l5">
+                                <label>
+                                    <input type="checkbox" name="symptoms" value="NightSweating"/>
+                                    <span style="font-size:2em">Sweating at Night</span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+        </div>
+        <tr id="suggestionRow">
+            <td>
+                <div class="row" id="suggestionDiv">
+                    <label style="font-size:1.5em"></label>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr id="medRow">
+
+            <td>
+                <div class="row" id="medDiv">
+                    <div class="input-field">
+                        <select id="medicine">
+                            <option value="Select The Medicine" selected>Select The Medicine</option>
+                            <option value="1110">Isoniazid/Rifampin/Ethambutol</option>
+                            <option value="0111">Rifampin/Ethambutol/Pyrazinamide</option>
+                            <option value="1011">Isoniazid/Ethambutol/Pyrazinamide</option>
+                            <option value="1101">Isoniazid/Rifampin/Pyrazinamide</option>
+                        </select>
+                        <label style="font-size:1.5em"></label>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="input-field col s12" id="cureButton">
+                        <a class="waves-effect waves-light btn-large" id="patCured" type="submit">Patient Cured</a>
+                        <!-- <input type="button" value="Report" id="submit"> -->
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="input-field col s12" id="cureButton">
+                        <a class="waves-effect waves-light btn-large" id="submit" type="submit">Update Patient log</a>
+                        <!-- <input type="button" value="Report" id="submit"> -->
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <br>
+        </table>
+
+    </form>
+</div>
+
+<div id="loading">
+    <h1>Updating patient data!</h1>
+    <img src="https://raw.githubusercontent.com/YashMeh/tbHack/master/views/media/loading.gif" width="40%">
+</div>
+<div id="success">
+    <h1>Thank you for updating!</h1>
+</div>
+
+<script src="update.js" type="text/javascript"></script>
+</body>
+</html>
