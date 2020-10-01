@@ -49,7 +49,7 @@ docker container run -d --name sahayak -p 3000:3000 sahayak:0.0.1
 
 ## Demo
 
-- The application demo can be found at https://youtu.be/r9Szg8D_AT4
+- The application demo can be found [here](https://youtu.be/r9Szg8D_AT4).
 
 ## Project Origin
 
